@@ -2455,7 +2455,7 @@ function loadTabs() {
         }
 
         function createNewTabButton() {
-			if (tabs.length <= 5) {
+			if (tabs.length >= 5) { return null; }
             const newTabButton = document.createElement('div');
             newTabButton.className = 'tab new-tab';
             newTabButton.innerHTML = '+';
@@ -2463,7 +2463,7 @@ function loadTabs() {
                 const newTab = addTab('New Tab ' + (tabs.length + 1));
             };
             return newTabButton;
-		}
+		
         }
 
         function addTab(title, content = '', id = null) {
